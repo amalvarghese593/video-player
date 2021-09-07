@@ -5,13 +5,12 @@ import vid from "../video/sintel-short.mp4";
 export const VideoPlayer = () => {
   const vidRef = useRef();
   const barRef = useRef();
-  //   vidRef.current.video.video.ontimeupadte;
   console.log(vidRef);
-  //   vidRef.current.ontimeupdate;
+  const fn1 = () => {};
   return (
     <div className="video-wrapper">
       <div className="c-video">
-        <video ref={vidRef} autoPlay>
+        <video onTimeUpdate={fn1} ref={vidRef} autoPlay>
           <source src={vid} type="video/mp4" />
           <source src={vid} type="video/webm" />
           <p>video not supported in this browser</p>
