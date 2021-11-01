@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
 }
-
 .video-wrapper {
   background-color: #ccc;
   width: 100%;
@@ -11,17 +10,22 @@
   align-items: center;
   justify-content: center;
 }
-.c-video {
+.rc-video {
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   overflow: hidden;
   position: relative;
-}
-.c-video video {
-  width: 100%;
+  border-radius: 3px;
 }
 .video {
   width: 100%;
+  height: 100%;
+}
+.empty {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
 }
 .controls {
   position: absolute;
@@ -29,34 +33,82 @@
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   transform: translateY(100%) translateY(-5px);
-  transition: all 0.4s ease;
+  transition: all 0.6s ease;
+  padding-bottom: 5px;
 }
-.c-video:hover .controls {
+.empty:hover .controls {
   transform: translateY(0);
 }
-.orange-bar {
+
+.c-bar {
   width: 100%;
-  background-color: #000;
+  background-color: #ccc;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' class='bi bi-record-circle-fill' viewBox='0 0 16 16'%3E%3Cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'/%3E%3C/svg%3E")
+      10 10,
+    pointer;
   height: 5px;
+  transition: all 0.2s ease-in;
 }
-.orange-juice {
+.c-bar:hover {
+  transform: scaleY(1.5);
+}
+.orange-bar {
   background-color: orangered;
-  width: 100px;
   height: 100%;
+  width: 0;
 }
 .btn {
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  position: relative;
 }
 .btn button {
   cursor: pointer;
 }
-
-/* .btn button::before {
-  content: "\f144";
-  font-family: "Font Awesome 5 Free";
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  font-size: 28px;
+.btn svg {
+  cursor: pointer;
+}
+.btn svg:hover {
+  color: #fe6746;
+}
+.btn svg:active {
   color: #fff;
-} */
+}
+.thumbnail-svg {
+  position: absolute;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+}
+.thumbnail-svg svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.thumbnail-svg svg:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.time-c {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.time-c svg {
+  position: absolute;
+  right: 20px;
+}
+.time-bar {
+  position: absolute;
+  left: 20px;
+}
+video::-webkit-media-controls {
+  display: none !important;
+}
+.js-is-visible {
+  opacity: 1;
+}
