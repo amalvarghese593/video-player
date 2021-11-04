@@ -68,13 +68,15 @@
 .btn button {
   cursor: pointer;
 }
-.btn svg {
+.btn img {
   cursor: pointer;
 }
-.btn svg:hover {
-  color: #fe6746;
+.btn img:hover {
+  /* color: #fe6746; */
+  filter: invert(51%) sepia(19%) saturate(6448%) hue-rotate(335deg)
+    brightness(109%) contrast(99%);
 }
-.btn svg:active {
+.btn img:active {
   color: #fff;
 }
 .thumbnail-svg {
@@ -83,13 +85,13 @@
   height: 100%;
   width: 100%;
 }
-.thumbnail-svg svg {
+.thumbnail-svg img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.thumbnail-svg svg:hover {
+.thumbnail-svg img:hover {
   opacity: 0.8;
   cursor: pointer;
 }
@@ -98,7 +100,7 @@
   display: flex;
   align-items: center;
 }
-.time-c svg {
+.time-c img {
   position: absolute;
   right: 20px;
 }
