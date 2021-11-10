@@ -132,7 +132,7 @@ export const VideoPlayer = () => {
         </video>
 
         <div className="empty">
-          <div className="controls">
+          <div className="controls noselect">
             <div className="c-bar" onClick={seekFn}>
               <div ref={barRef} id="Bar" className="orange-bar"></div>
             </div>
